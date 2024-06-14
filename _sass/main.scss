@@ -1,20 +1,28 @@
-html { 
-    height: 100%; 
+.section { 
+    @extend .center; 
+    height: $section-height; 
+    color: $text-color; 
+    font-size: $text-font-size; 
 } 
 
-body {
-    min-height: 100%; 
-    background-color: aqua; 
-} 
-
-.section {
-    width: 100%; height: 100%; 
+.hidden {
+    position: absolute; 
+    left: -10000px; top: -10000px; 
+    width: 0; height: 0; 
+    overflow: hidden; 
 }
 
 .section-laluger-free {
-    background-color: green;
+    background-color: $laluger-free-color;
 } 
 
 .section-laluger-full {
-    background-color: red; 
+    background-color: $laluger-full-color; 
 } 
+
+.text {
+    @extend .center; 
+    width: $text-element-width; height: $text-element-height; 
+    border-width: $text-border-width; border-style: $text-border-style; 
+    border-radius: $text-border-radius; 
+}
