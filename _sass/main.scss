@@ -21,7 +21,7 @@
 } 
 
 .text {
-    @extend .center; 
+    @extend %center; 
     width: $text-element-width; height: $text-element-height; 
     border-width: $text-border-width; border-style: $text-border-style; 
     border-radius: $text-border-radius; 
