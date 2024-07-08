@@ -1,3 +1,18 @@
 %center { 
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
 } 
+
+%center-block {
+    margin-left: auto; margin-right: auto; 
+} 
+
+%center-absolute-translate {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); 
+} 
+
+%hidden {
+    position: absolute; 
+    left: -10000px; top: -10000px; 
+    width: 0; height: 0; 
+    overflow: hidden; 
+}
