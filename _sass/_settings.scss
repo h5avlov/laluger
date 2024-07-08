@@ -1,10 +1,29 @@
-$text-font-size: 1.4em; 
-$text-element-width: 6em; 
-$text-element-height: $text-element-width; 
-$text-border-width: 3px; 
-$text-border-style: dashed; 
-$text-border-radius: 50%; 
+$positive-color: green; 
+$negative-color: red; 
 $text-color: #CCC; 
-$laluger-free-color: green; 
-$laluger-full-color: red; 
+
+$text-font-size: 15px; 
+
 $section-height: 100vh; 
+
+$status-holder-width: 50%; 
+
+$status-text-padding-x: 1.5em; 
+$status-text-padding-y: $status-text-padding-x; 
+// $status-text-holder-width: 50%; 
+// $status-text-holder-height: auto; 
+$status-text-border-width: 1px; 
+$status-text-border-style: dashed; 
+$status-text-border-radius: 10px; 
+$status-text-font-size: 1.2em; 
+
+$icon-width: 1em; 
+$icon-height: $icon-width; 
+$icon-distance-y: 1em; 
+$icon-font-family: Ionicons; 
+$icon-font-url: "/assets/font/ionicons.ttf"; 
+$icon-font-size: 2.5em; 
+$icon-positive-code: "\f3fd"; 
+$icon-negative-code: "\f404"; 
+$icon-question-code: "\f143"; 
+$icon-color: $text-color; 
