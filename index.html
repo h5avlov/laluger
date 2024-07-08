@@ -5,5 +5,36 @@
 layout: default 
 ---
 
-<div class="section section-laluger-free"><span class="text">No</span></div> 
-<div class="section section-laluger-full"><span class="text">Yes</span></div> 
+<div class="section-holder"> 
+    {% if site.data.settings.clear == true %} 
+        <div class="section section-positive">
+            <div class="status status-positive"> 
+                <i class="has-icon icon-positive"></i>
+                <span class="status-text">{{ site.data.settings.status_text.positive }}</span> 
+            </div>
+        </div> 
+    {% endif %}
+
+    {% if site.data.settings.clear == false %} 
+        <div class="section section-negative">
+            <div class="status status-negative"> 
+                <i class="has-icon icon-negative"></i>
+                <span class="status-text">{{ site.data.settings.status_text.negative }}</span> 
+            </div> 
+        </div> 
+    {% endif %} 
+
+    <div class="icon-question-holder icon-question-holder-color">
+        <div class="icon-question"> 
+            <ion-icon class="icon-question-char" src="/assets/font/help.svg"></ion-icon> 
+            <div class="icon-question-box"></div> 
+        </div> 
+    </div> 
+
+    <div class="icon-question-holder icon-question-holder-gray"> 
+        <div class="icon-question"> 
+            <ion-icon class="icon-question-char" src="/assets/font/help.svg"></ion-icon> 
+            <div class="icon-question-box"></div> 
+        </div> 
+    </div> 
+</div>
