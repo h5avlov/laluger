@@ -1,28 +1,63 @@
+.section-holder {
+    position: relative; 
+}
+
 .section { 
-    @extend .center; 
+    @extend %center; 
     height: $section-height; 
+    position: relative; 
     color: $text-color; 
     font-size: $text-font-size; 
 } 
 
 .hidden {
-    position: absolute; 
-    left: -10000px; top: -10000px; 
-    width: 0; height: 0; 
-    overflow: hidden; 
+    @extend %hidden; 
 }
 
-.section-laluger-free {
-    background-color: $laluger-free-color;
+.section-positive {
+    background-color: $positive-color; 
 } 
 
-.section-laluger-full {
-    background-color: $laluger-full-color; 
+.section-negative {
+    background-color: $negative-color; 
 } 
 
-.text {
-    @extend %center; 
-    width: $text-element-width; height: $text-element-height; 
-    border-width: $text-border-width; border-style: $text-border-style; 
-    border-radius: $text-border-radius; 
+.status { 
+    display: block; 
+} 
+
+.status-text { 
+    display: block; 
+    margin-top: $icon-distance-y; 
+    
+    padding: $status-text-padding-y $status-text-padding-x;  
+    text-align: center; 
+
+    border-width: $status-text-border-width; border-style: $status-text-border-style; 
+    border-radius: $status-text-border-radius; 
+
+    font-size: $status-text-font-size; 
+} 
+
+.icon-question { 
+    display: flex; justify-content: center; align-items: center; 
+    width: 100%; height: 100vh; 
+
+    &-holder { 
+        width: 100%; height: 100vh; 
+        position: absolute; left: 0; top: 0; 
+        z-index: 1; 
+        font-size: 20em; 
+
+        &-gray { 
+            z-index: 2; 
+        } 
+    } 
+}
+
+.icon-question-box { 
+    display: block; 
+    width: 70vmin; padding-top: 70vmin; 
+    position: absolute; 
+    border: 30px solid; border-radius: 50%; 
 }
