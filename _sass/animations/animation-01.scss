@@ -1,0 +1,90 @@
+body { 
+    overflow: hidden; 
+} 
+
+.section {
+    opacity: 0; 
+}
+
+.status { 
+    .has-icon, &-text { 
+        opacity: 0; 
+    }
+} 
+
+.section, 
+// .section-holder, 
+.icon-question::before, 
+.has-icon, .status-text {
+    animation-fill-mode: forwards;
+} 
+
+.section {
+    animation-name: display; animation-duration: 0.4s; animation-delay: 2s; 
+}
+
+// .section-holder { 
+//     --slide-distance: #{$section-height}; 
+
+//     &.animate-negative { 
+//         animation-name: slide; animation-duration: 0.4s; animation-delay: 1s;
+//     }  
+
+// } 
+
+.icon-question::before { 
+    --scale-factor: 1.5; 
+
+    animation-name: grow; animation-duration: 5s; animation-delay: 0.2s; 
+} 
+
+.status { 
+    .has-icon, &-text {
+        animation-name: display, pulsate; animation-duration: 0.4s;  
+    } 
+
+    .has-icon { 
+        --scale-factor: 10; 
+        animation-delay: 2.4s;
+    } 
+
+    &-text { 
+        --scale-factor: 1.5; 
+        animation-delay: 2.6s; 
+    }
+}
+
+@keyframes display {
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes slide { 
+    100% {
+        margin-top: calc(-1 * var(--slide-distance)); 
+    }
+    
+} 
+
+@keyframes translate { 
+    100% {
+        transform: translateY(0); 
+    } 
+} 
+
+@keyframes pulsate {
+    50% {
+        transform: scale(var(--scale-factor)); 
+    } 
+
+    100% {
+        transform: scale(1); 
+    }
+} 
+
+@keyframes grow {
+    100% {
+        transform: scale(var(--scale-factor)); 
+    }
+}

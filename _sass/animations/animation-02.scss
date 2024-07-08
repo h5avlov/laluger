@@ -1,0 +1,121 @@
+body { 
+    overflow: hidden; 
+} 
+
+.section {
+    opacity: 0; 
+}
+
+.status { 
+    .has-icon, &-text { 
+        opacity: 0; 
+    }
+} 
+
+.icon-question { 
+    &::before, &::after { 
+        transform: scale(0.5); 
+    } 
+}
+
+.section, 
+.icon-question::before, .icon-question::after, 
+.has-icon, .status-text {
+    animation-fill-mode: forwards;
+} 
+
+.section {
+    animation-name: display; animation-duration: 0.4s; animation-delay: 1.8s; 
+}
+
+.icon-question { 
+    &::before, &::after { 
+        animation-name: scale-pop-ease; animation-duration: 2.4s; 
+    } 
+
+    &::before { 
+        animation-delay: 0.35s; 
+    } 
+
+    &::after { 
+        animation-delay: 0.2s; 
+    } 
+
+    // &::before { 
+    //     --scale-factor: 1.5; 
+
+    //     //animation-name: grow; animation-duration: 5s; animation-delay: 0.2s; 
+    // } 
+
+    // &::after {
+
+    // }
+}
+
+.status { 
+    .has-icon, &-text {
+        animation-name: display, pulsate; animation-duration: 0.4s;  
+    } 
+
+    .has-icon { 
+        --scale-factor: 10; 
+        animation-delay: 2s;
+    } 
+
+    &-text { 
+        --scale-factor: 1.5; 
+        animation-delay: 2.2s; 
+    }
+}
+
+@keyframes display {
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes slide { 
+    100% {
+        margin-top: calc(-1 * var(--slide-distance)); 
+    }
+    
+} 
+
+@keyframes translate { 
+    100% {
+        transform: translateY(0); 
+    } 
+} 
+
+@keyframes pulsate {
+    50% {
+        transform: scale(var(--scale-factor)); 
+    } 
+
+    100% {
+        transform: scale(1); 
+    }
+} 
+
+@keyframes grow {
+    100% {
+        transform: scale(var(--scale-factor)); 
+    }
+} 
+
+@keyframes scale-reset {
+    100% {
+        transform: scale(1); 
+    }
+} 
+
+@keyframes scale-pop-ease { 
+    15% {
+        transform: scale(0.9); 
+    } 
+
+    100% {
+        transform: scale(1);
+    } 
+    
+}
