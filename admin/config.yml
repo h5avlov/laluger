@@ -12,10 +12,16 @@ collections:
     files:
       - label: "Status"
         name: "Status"
-        file: "_status/status.yml" 
+        file: "_status/select_status.md" 
         fields: 
           - 
             label: "Select Status" 
-            name: "select_status" 
+            name: "value" 
             widget: "select" 
-            options: ["Латето е тука", "Латето я няма"] 
+            options: 
+              - 
+                label: "Латето я няма" 
+                value: 1  
+              - 
+                label: "Латето е тук" 
+                value: 2 
