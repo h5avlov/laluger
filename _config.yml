@@ -30,7 +30,7 @@ twitter_username: jekyllrb
 github_username:  jekyll 
 
 collections: 
-  - status 
+  - settings 
 
 # Build settings
 # theme: minima

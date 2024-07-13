@@ -12,11 +12,11 @@ collections:
     files:
       - label: "Status"
         name: "Status"
-        file: "_status/select_status.md" 
+        file: "_settings/settings.md"  
         fields: 
           - 
-            label: "Select Status" 
-            name: "value" 
+            label: "Status" 
+            name: "status" 
             widget: "select" 
             options: 
               - 
@@ -25,3 +25,22 @@ collections:
               - 
                 label: "Латето е тук" 
                 value: 2 
+          - 
+            label: "Status Text" 
+            name: "status_text" 
+            allow_add: false 
+            collapsed: false 
+            widget: "object"  
+            fields: 
+              - 
+                label: "Съобщение, когато Латето я няма" 
+                name: "positive" 
+                widget: "string" 
+              - 
+                label: "Съобщение, когато Латето е тук" 
+                name: "negative" 
+                widget: "string" 
+            default: 
+              - 
+                positive: "Няма я" 
+                negative: "Тук е" 
