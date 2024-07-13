@@ -10,15 +10,18 @@ media_folder: "./assets/images/uploads"
 
 collections:
   - label: "Settings" 
-    name: "settings"
+    name: "settings" 
+    allow_add: false 
+    collapsed: false 
     files:
-      - label: "Settings"
-        name: "settings"
-        file: "_settings/settings.md"  
+      - 
+        label: "Status"
+        name: "status"
+        file: "_settings/status.md"  
         fields: 
           - 
             label: "Status" 
-            name: "status" 
+            name: "value" 
             widget: "select" 
             options: 
               - 
@@ -27,22 +30,20 @@ collections:
               - 
                 label: "Латето е тук" 
                 value: 2 
+      - 
+        label: "Status Text" 
+        name: "status_text" 
+        file: "_settings/status_text.md" 
+        fields: 
           - 
-            label: "Status Text" 
-            name: "status_text" 
-            allow_add: false 
-            collapsed: false 
-            widget: "object"  
-            fields: 
-              - 
-                label: "Съобщение, когато Латето я няма" 
-                name: "positive" 
-                widget: "string" 
-              - 
-                label: "Съобщение, когато Латето е тук" 
-                name: "negative" 
-                widget: "string" 
-            default: 
-              - 
-                positive: "Няма я" 
-                negative: "Тук е" 
+            label: "Съобщение, когато Латето я няма" 
+            name: "positive" 
+            widget: "string" 
+          - 
+            label: "Съобщение, когато Латето е тук" 
+            name: "negative" 
+            widget: "string" 
+        default: 
+          - 
+            positive: "Няма я" 
+            negative: "Тук е" 
