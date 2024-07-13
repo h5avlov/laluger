@@ -3,6 +3,8 @@ local_backend: true
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master) 
+  commit_messages:
+    update: Update {{collection}} “{{slug}}”
 
 media_folder: "./assets/images/uploads" 
 
