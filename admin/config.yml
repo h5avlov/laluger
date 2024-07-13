@@ -9,11 +9,11 @@ backend:
 media_folder: "./assets/images/uploads" 
 
 collections:
-  - label: "Status"
-    name: "status"
+  - label: "Settings" 
+    name: "settings"
     files:
-      - label: "Status"
-        name: "Status"
+      - label: "Settings"
+        name: "settings"
         file: "_settings/settings.md"  
         fields: 
           - 
