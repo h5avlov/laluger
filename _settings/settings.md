@@ -1,6 +1,6 @@
 ---
-status: 1
+status: 2
 status_text:
-  positive: "Латето я няма "
+  positive: "Латето не е тук "
   negative: "Латето е тук "
 ---
