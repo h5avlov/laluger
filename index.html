@@ -6,22 +6,23 @@ layout: default
 ---
 
 <div class="section-holder"> 
-    {%- assign settings = site.settings[0] -%} 
+    {%- assign status = site.settings[0] -%} 
+    {%- assign status_text = site.settings[1] -%}
 
-    {% if settings.status == 1 %} 
+    {% if status.value == 1 %} 
         <div class="section section-positive">
             <div class="status status-positive"> 
                 <i class="has-icon icon-positive"></i>
-                <span class="status-text">{{ settings.status_text.positive }}</span> 
+                <span class="status-text">{{ status_text.positive }}</span> 
             </div>
         </div> 
     {% endif %}
 
-    {% if settings.status == 2 %} 
+    {% if status.value == 2 %} 
         <div class="section section-negative">
             <div class="status status-negative"> 
                 <i class="has-icon icon-negative"></i>
-                <span class="status-text">{{ settings.status_text.negative }}</span> 
+                <span class="status-text">{{ status_text.negative }}</span> 
             </div> 
         </div> 
     {% endif %} 
