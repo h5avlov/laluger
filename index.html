@@ -9,7 +9,7 @@ layout: default
     {%- assign status = site.settings[0] -%} 
     {%- assign status_text = site.settings[1] -%}
 
-    {% if status.value == 1 %} 
+    <!-- {% if status.value == 1 %} 
         <div class="section section-positive">
             <div class="status status-positive"> 
                 <i class="has-icon icon-positive"></i>
@@ -25,19 +25,25 @@ layout: default
                 <span class="status-text">{{ status_text.negative }}</span> 
             </div> 
         </div> 
-    {% endif %} 
+    {% endif %}  -->
 
-    <div class="icon-question-holder icon-question-holder-color">
-        <div class="icon-question"> 
-            <ion-icon class="icon-question-char" src="./assets/font/help.svg"></ion-icon> 
-            <div class="icon-question-box"></div> 
-        </div> 
+    <div class="icon-holder"> 
+        <ion-icon class="icon icon-question" src="./assets/font/help.svg"></ion-icon>  
+
+        {% if status.value == 1 %} 
+            <ion-icon class="icon icon-status icon-checkmark" src="./assets/font/checkmark.svg"></ion-icon> 
+        {% else if status.value == 2 %} 
+            <ion-icon class="icon icon-status icon-close" src="./assets/font/close-outline.svg"></ion-icon> 
+        {% endif %} 
+
+        <div class="icon-box"></div> 
     </div> 
 
-    <div class="icon-question-holder icon-question-holder-gray"> 
-        <div class="icon-question"> 
-            <ion-icon class="icon-question-char" src="./assets/font/help.svg"></ion-icon> 
-            <div class="icon-question-box"></div> 
-        </div> 
+    <div class="status-text">
+        {% if status.value == 1 %}
+            {{ status_text.positive }}
+        {% else if status.value == 2 %} 
+            {{ status_text.negative }} 
+        {% endif %} 
     </div> 
 </div>

@@ -2,102 +2,76 @@ body {
     overflow: hidden; 
 } 
 
-.section { 
-    z-index: 3;
+.status-text { 
+    margin-top: 100px; 
     opacity: 0; 
-}
+} 
 
-.status { 
-    .has-icon, &-text { 
-        opacity: 0; 
+.icon, 
+.icon-box { 
+    opacity: 0; 
+    transform: scale(0.5); 
+} 
+
+.icon { 
+    &-question { 
+        --scale-factor: 0.5; 
+
+        animation: 
+            fade-in 0.1s 0.35s, 
+            scale-pop-ease 4s 0.35s, 
+            scale 0.2s 3s, 
+            fade-out 0.2s 3s; 
     } 
 
-    .has-icon { 
-        transform: scale(5); 
+    &-box { 
+        animation: 
+            fade-in 0.1s 0.25s, 
+            scale-pop-ease 4s 0.25s; 
     } 
 
-    &-text { 
-        transform: scale(2); 
+    &-status { 
+        --scale-factor: 1; 
+
+        animation: fade-in 0.2s 3.2s, scale 0.2s 3.2s; 
     }
 } 
 
-.icon-question-holder { 
-    &-gray { 
-        overflow: hidden; 
+.icon-holder { 
+    --scale-factor: 0.2; 
+    --slide-distance: 125px; 
 
-        .icon-question { 
-            &-char, &-box { 
-                transform: scale(0.5); 
-            } 
-        } 
-    } 
-
-    &-color {
-        opacity: 0; 
-    }
-}
-
-// .icon-question-holder-color {
-//     // height: 0; overflow: hidden; 
-//     bottom: 0; top: 100%; 
-// }
-
-.section, 
-.icon-question-holder-gray, 
-.icon-question-holder-color, 
-.icon-question-holder-gray .icon-question-char, .icon-question-holder-gray .icon-question-box, 
-.has-icon, .status-text {
-    animation-fill-mode: forwards;
+    animation: scale 0.2s 3.5s, slide 0.2s 3.8s; 
 } 
 
-.section {
-    animation-name: display; animation-duration: 0.4s; animation-delay: 2.8s; 
+.status-text {
+    --slide-distance: 0; 
+
+    animation: fade-in 0.1s 3.8s, slide 0.2s 3.8s; 
 }
 
-.icon-question-holder { 
-    &-gray { 
-        animation-name: close; animation-duration: 0.4s; animation-delay: 2.5s; 
+.icon-holder, 
+.icon, 
+.icon-box, 
+.status-text {
+    animation-fill-mode: forwards; 
+} 
 
-        .icon-question { 
-            &-char, &-box { 
-                animation-name: scale-pop-ease; animation-duration: 2.4s; 
-            } 
-
-            &-char { 
-                animation-delay: 0.35s; 
-            } 
-
-            &-box { 
-                animation-delay: 0.2s; 
-            } 
-
-        } 
-    } 
-
-    &-color {
-        animation-name: display; animation-duration: 0.00001s; animation-delay: 2.4s; 
+@keyframes height-down {
+    100% {
+        height: 20vh; 
     }
 }
 
-.status { 
-    --scale-factor: 1; 
-
-    .has-icon, &-text {
-        animation-name: display, scale; animation-duration: 0.2s;  
-    } 
-
-    .has-icon { 
-        animation-delay: 2.8s;
-    } 
-
-    &-text { 
-        animation-delay: 2.9s; 
-    }
-}
-
-@keyframes display {
+@keyframes fade-in {
     100% {
         opacity: 1; 
+    }
+} 
+
+@keyframes fade-out {
+    100% {
+        opacity: 0; 
     }
 }
 
@@ -149,8 +123,8 @@ body {
 } 
 
 @keyframes scale-pop-ease { 
-    15% {
-        transform: scale(0.9); 
+    10% {
+        transform: scale(0.95); 
     } 
 
     100% {
